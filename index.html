@@ -12,37 +12,7 @@
     <script src="permutations.js"></script>
     <script src="dictionary.js"></script>
     <script src="largedict.js"></script>
-    <script>
-
-        let combinations = [];
-        let permutations = [];
-        let wordArray = words();
-        let d = new Dictionary("abcdefghijklmnopqrstuvwxyz");
-        let count = 0;
-
-        for(word in wordArray) {
-          d.put(wordArray[word], count++);
-        }
-
-        function countdown(letters) {
-            combine(letters, "", 0);
-
-            combinations.map(function (combination) {
-                let permutation = new Permutations(combination);
-                permutations.push(permutation.generate());
-            });
-
-            permutations.forEach(function (perm) {
-                perm.forEach(function (p) {
-                    if (d.contains(p)) {
-                        console.log(p)
-                    }
-                });
-            });
-            combinations = [];
-            permutations = []; 
-        }
-        </script>
+    <script src="index.js"></script>
     </body>
 
     </html>

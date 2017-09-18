@@ -1,10 +1,15 @@
 
+function combine(instr) {
+    result = [];
+    _combine(instr, "", 0, result);
+   return result; 
+}
 
-function combine(instr, outstr, index) {
+function _combine(instr, outstr, index, result) {
     for(let i = index; i < instr.length; i++) {
         outstr = outstr + instr[i];
-        combinations.push(outstr)
-        combine(instr, outstr, i+1);
+        result.push(outstr)
+        _combine(instr, outstr, i+1, result);
         outstr = outstr.slice(0, outstr.length - 1);
     }
 }

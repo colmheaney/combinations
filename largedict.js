@@ -1,4 +1,4 @@
-var words = function() {
+var getWords = function() {
   return [
     "a",
     "aaa",
